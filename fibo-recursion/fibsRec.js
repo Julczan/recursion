@@ -13,5 +13,3 @@ function display(n) {
   }
   return result;
 }
-
-console.log(display(4));
