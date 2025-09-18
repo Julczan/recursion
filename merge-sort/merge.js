@@ -1,5 +1,19 @@
-const arr1 = [1, 3, 5, 7, 9];
-const arr2 = [2, 4, 6, 8, 10];
+const arr1 = [2];
+const arr2 = [1];
+
+const unsortedArr = [3, 2, 1, 13, 8, 5, 0, 1];
+
+function mergeSort(arr) {
+  const mid = Math.floor(arr.length / 2);
+  const leftSide = arr.slice(0, mid);
+  const rightSide = arr.slice(mid);
+
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  return merge(mergeSort(leftSide), mergeSort(rightSide));
+}
 
 function merge(A, B) {
   let result = [];
@@ -23,4 +37,4 @@ function merge(A, B) {
   return result;
 }
 
-console.log(merge(arr1, arr2));
+console.log(mergeSort(unsortedArr));
